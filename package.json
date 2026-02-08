@@ -1,0 +1,12 @@
+{
+  "name": "quizforge-prototype",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix web\"",
+    "build": "npm run build --prefix server && npm run build --prefix web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
