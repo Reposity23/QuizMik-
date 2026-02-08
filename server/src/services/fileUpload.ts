@@ -1,11 +1,9 @@
 import multer from "multer";
 import path from "path";
-import fs from "fs";
+import fs from "fs-extra";
 
 const uploadDir = path.resolve("uploads");
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
-}
+fs.ensureDirSync(uploadDir);
 
 export const upload = multer({
   storage: multer.diskStorage({

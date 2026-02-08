@@ -8,7 +8,11 @@ const extractOutputText = (response: unknown): string => {
   const res = response as {
     output_text?: string;
     output?: { content?: { text?: string }[] }[];
+    choices?: { message?: { content?: string } }[];
   };
+  if (res.choices?.[0]?.message?.content) {
+    return res.choices[0].message.content;
+  }
   if (res.output_text) {
     return res.output_text;
   }
@@ -80,7 +84,7 @@ export const generateQuizWithGrok = async (params: {
 
   const response = await client.responses.create({
     model: "grok-4-1-fast-non-reasoning",
-    input: [
+    messages: [
       { role: "system", content: systemPrompt },
       {
         role: "user",

@@ -1,7 +1,7 @@
 import { QuizType } from "./quizSchema";
 
 export const buildGrokSystemPrompt = () =>
-  "You are a quiz generator. You must output valid JSON only. No markdown. Do not invent facts. Use ONLY the attached files or provided SOURCE PACK. If information is insufficient, reduce the number of questions and state that in source_summary. Render any math using LaTeX delimiters: inline \\( ... \\) and block \\[ ... \\]. Keep questions exam-ready. Provide short explanations.";
+  "You are a quiz generator. You must output valid JSON only. No markdown. Do not invent facts. Use ONLY the attached files or provided SOURCE PACK. If information is insufficient, reduce the number of questions and state that in source_summary. Render math using LaTeX delimiters: inline \\\\( ... \\\\) and block \\\\[ ... \\\\]. Keep questions exam-ready and unambiguous. Provide short explanations.";
 
 export const buildGrokUserPrompt = (params: {
   quizType: QuizType;
