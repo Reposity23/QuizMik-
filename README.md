@@ -41,6 +41,16 @@ npm run dev
 - Web UI: http://localhost:5173
 - API: http://localhost:3001
 
+## Deploy on Railway
+Railway looks for a root `start` script or `main` entry. This repo includes:
+```bash
+npm run start
+```
+Which launches the Express API from `/server`. For Railway:
+1. Set the root directory to the repo root.
+2. Ensure the start command is `npm run start`.
+3. The server will listen on `PORT` automatically.
+
 ## Limitations
 - Image OCR is not enabled yet (images are skipped with a notice).
 - Quiz quality depends on the source files provided.
