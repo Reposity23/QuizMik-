@@ -310,7 +310,12 @@ const wireGenerate = () => {
 
     currentQuiz = response.quiz;
     answers = {};
-    quizMeta.innerHTML = \"\";\n    const title = document.createElement(\"div\");\n    title.textContent = `${currentQuiz.quiz_title} · ${currentQuiz.question_count} questions`;\n    const summary = document.createElement(\"div\");\n    summary.textContent = currentQuiz.source_summary;\n    quizMeta.append(title, summary);
+    quizMeta.innerHTML = "";
+    const title = document.createElement("div");
+    title.textContent = `${currentQuiz.quiz_title} · ${currentQuiz.question_count} questions`;
+    const summary = document.createElement("div");
+    summary.textContent = currentQuiz.source_summary;
+    quizMeta.append(title, summary);
     renderQuizQuestions(currentQuiz, quizContainer, answers);
     quizSection.style.display = "block";
     renderDebugSection(debugSection, response.raw);
